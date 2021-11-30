@@ -11,41 +11,28 @@ Ypp.title('열정을 품은 파이썬')
 Ypp.geometry('1366x768+100+100')
 Ypp.resizable(0,0)
 
-###############################################################
-#위쪽 프레임 이름
 lab1= tk.Label(Ypp, text = "열품파", font ="Verdana 30 bold")
 lab1.pack(side = "top", ipady = 40)
 
-# 왼쪽 프레임 이름
 lab2 = tk.Label(Ypp, text= "오늘 할일", font = "Verdana 22 bold")
 lab2.place(relx= 0.15, rely = 0.1)
 
-# 왼쪽 프레임
 frame_L = tk.Frame(Ypp, relief = "solid", bd = 1, bg = 'white') 
 frame_L.pack(side = "left", fill = "both", expand =True)
 
-## 오른쪽 프레임
 frame_R = tk.Frame(Ypp, relief = "solid", bd = 1) 
 frame_R.pack(side = "right", fill = "both", expand = True)
-
-#출력 창 생성
 
 listbox = tk.Listbox(frame_L, selectmode = 'extended', bd = 0, height = 7, width = 40, font = ("Verdana 25 bold"))
 listbox.place(relx=0, rely=0)
 
-## 리스트 변수 변경
 ListN = tk.StringVar()
 
-## 함수 
 def listup():
     aList = ListN.get()
     listbox.insert('end',aList)
     entry.delete(0, len(entry.get()))
-
-
-##################################### 
-
-# 입력창 설정 
+ 
 entry= tk.Entry(frame_L, width=40, font = ("Verdana 17 bold"), textvariable = ListN)
 entry.place(relx = 0, rely = 0.94)
 
@@ -54,30 +41,23 @@ button.place(relx = 0.82, rely = 0.94)
 
 
 '''
-entry.bind("<Return>", ent_p()) ##엔터를 치면 결과라는 함수 실행
+entry.bind("<Return>", ent_p()) 
 
 '''
 
-
-## 예시 지우는 함수
 entry.insert(0, "ex)수학 공부하기")
 
 def clear(event):
     if entry.get() == "ex)수학 공부하기":
         entry.delete(0, len(entry.get()))
 
-## 예시 삭제
 entry.bind("<Button-1>", clear)
 def delete():
     entry.bind()
 
-
-
-## 출력한 할일 삭제
 def listdel():
     listbox.delete(0)
     
-
 
 buttondel = tk.Button(frame_L, text = "삭제", width = 7, font = ("Verdana 15 bold"), command = listdel)
 buttondel.place(relx = 0.85, rely = 0)
@@ -187,7 +167,6 @@ reset.pack(side="left")
 label = tk.Label(frame_R, text="Welcome!", fg="pink", font="Verdana 23 bold") 
 label.place(relx = 0.5, rely = 0)
 
-#################################
 
 counter1 = 54000
 running1 = False
@@ -248,8 +227,6 @@ label1 = tk.Label(frame_R, text="Welcome!", fg="pink", font="Verdana 23 bold")
 label1.place(relx = 0.5, rely = 0.065)
 
 
-##############################################################33
-
 counter2 = 54000
 running2 = False
 def counter_label2(label2): 
@@ -307,9 +284,6 @@ stop2.pack(side ="left")
 reset2.pack(side="left")
 label2 = tk.Label(frame_R, text="Welcome!", fg="pink", font="Verdana 23 bold") 
 label2.place(relx = 0.5, rely = 0.13)
-
-
-#####################################################################
 
 counter3 = 54000
 running3 = False
@@ -369,7 +343,6 @@ reset3.pack(side="left")
 label3 = tk.Label(frame_R, text="Welcome!", fg="pink", font="Verdana 23 bold") 
 label3.place(relx = 0.5, rely = 0.195)
 
-######################################################################
 counter4 = 54000
 running4 = False
 def counter_label4(label4): 
@@ -427,8 +400,6 @@ stop4.pack(side ="left")
 reset4.pack(side="left")
 label4 = tk.Label(frame_R, text="Welcome!", fg="pink", font="Verdana 23 bold") 
 label4.place(relx = 0.5, rely = 0.26)
-
-######################################################################
 
 counter5 = 54000
 running5 = False
@@ -488,7 +459,6 @@ reset5.pack(side="left")
 label5 = tk.Label(frame_R, text="Welcome!", fg="pink", font="Verdana 23 bold") 
 label5.place(relx = 0.5, rely = 0.325)
 
-######################################################################
 counter6 = 54000
 running6 = False
 def counter_label6(label6): 
@@ -546,9 +516,6 @@ stop6.pack(side ="left")
 reset6.pack(side="left")
 label6 = tk.Label(frame_R, text="Welcome!", fg="pink", font="Verdana 23 bold") 
 label6.place(relx = 0.5, rely = 0.39)
-######################################################################
-
-######################################################################
 
 def popup():
     OpenS = tk.Toplevel(Ypp)
@@ -571,10 +538,6 @@ button1.place(x=860, y=700)
 
 button2 = tk.Button(Ypp, text="실패", width = 5, font=("Verdana 20 bold"), command = pop)
 button2.place(x=1040, y=700)
-
-######################################################################################3
-
-##############################################################################################3
 
 Ypp.mainloop()
 
